@@ -84,7 +84,7 @@ function mirarFecha(fecha) {
     const date = fecha.trim();
     const pattern = /^\d{4}([\-/. ])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
     if (typeof date !== 'string' || date === "" || !pattern.test(date)){
-        console.log("entro en el if")
+        console.log("No es una fecha")
         return false
     } else {
         return true
@@ -110,7 +110,42 @@ function mirarFecha(fecha) {
     // Observar en que formato guarda la hora
         // 
 
+        function mirarHora(hora) {
+
+            const tiempo = hora.trim();
+            const pattern = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+            if (typeof tiempo !== 'string' || tiempo === "" || !pattern.test(tiempo)){
+                console.log("No es una hora")
+                return false
+            } else {
+                return true
+            }
+        }
+        
+            console.log(mirarHora("00:00"))
+            console.log(mirarHora("04:222      "))
+            console.log(mirarHora("19:20"))
+
+
+
+       
 //  validar la fecha y hora de nacimiento 
+
+function mirarFechayhora(fyc) {
+
+    const tiempoyfecha = fyc.trim();
+    const pattern = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})(\s)([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/
+    if (typeof tiempoyfecha !== 'string' || tiempoyfecha === "" || !pattern.test(tiempoyfecha)){
+        console.log("No es una hora y fecha")
+        return false
+    } else {
+        return true
+    }
+}
+
+    console.log(mirarHora("00:00 19/05/2000"))
+    console.log(mirarHora(" nada      "))
+    console.log(mirarHora("19/05/2000 12:46"))
 
 //  validar mes  
 
