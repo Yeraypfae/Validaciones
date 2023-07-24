@@ -91,9 +91,9 @@ function mirarFecha(fecha) {
     }
 }
 
-    console.log(mirarFecha("2000-02-19"))
-    console.log(mirarFecha("02-19-2000       "))
-    console.log(mirarFecha("19-02-2000"))
+    console.log(mirarFecha("2000/02/19"))
+    console.log(mirarFecha("02/19/2000       "))
+    console.log(mirarFecha("19/02/2000"))
         
 
 
@@ -143,13 +143,39 @@ function mirarFechayhora(fyc) {
     }
 }
 
-    console.log(mirarHora("00:00 19/05/2000"))
-    console.log(mirarHora(" nada      "))
-    console.log(mirarHora("19/05/2000 12:46"))
+    console.log(mirarFechayhora("00:00 19/05/2000"))
+    console.log(mirarFechayhora(" nada      "))
+    console.log(mirarFechayhora("19/05/2000 12:46"))
 
 //  validar mes  
 
+function validarMes(mes) {
+    const meses = mes.trim();
+    const pattern = /(\b\d{1,2}\D{0,3})?\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|(Nov|Dec)(?:ember)?)\D?(\d{1,2}(st|nd|rd|th)?)?(([,.\-\/])\D?)?((19[7-9]\d|20\d{2})|\d{2})*/;
+    //console.log("sin limpiar: ", mes, " y limpio: ", meses)
+    if (typeof meses !== 'string' || meses === "" || !pattern.test(meses)) {
+        console.log("entro en el if")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarMes("Febrero de 2023"))
+console.log(validarMes("2023 de agosto"))
+console.log(validarMes("2023-03-28"))
+
+
+
+
 //  validar semana  
+
+
+//validar fecha de control
+
+function verFormato(atributoFormato) {
+    console.log("Funciona")
+    console.log(typeof document.querySelector(atributoFormato).value)
+}
 
 //  validar un rango númerico min de -10 a un maximo de 10  
 
@@ -163,3 +189,4 @@ function mirarFechayhora(fyc) {
 //  validar terminos de búsqueda 
 
 //  validar un color
+//  funcion que permite ver comom recoge los datos un formulario
