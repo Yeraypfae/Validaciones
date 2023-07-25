@@ -169,6 +169,21 @@ console.log(validarMes("2023-03-28"))
 
 //  validar semana  
 
+function validarSemana(semana){
+    const semanas = semana.trim();
+    const pattern = /^(?<week>(\d{2}))(?<year>(\d{2}){0,2}[-\/]?)/;
+    //console.log("sin limpiar: ", semana, " y limpio: ", semanas)
+    if (typeof semanas !== 'string' || semanas === "" || !pattern.test(semanas)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarSemana("23-2022"))
+console.log(validarSemana("Semana 23-2023"))
+
+
 
 //validar fecha de control
 
