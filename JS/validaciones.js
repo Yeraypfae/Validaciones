@@ -128,7 +128,7 @@ function mirarFecha(fecha) {
 
 
 
-       
+
 //  validar la fecha y hora de nacimiento 
 
 function mirarFechayhora(fyc) {
@@ -147,7 +147,7 @@ function mirarFechayhora(fyc) {
     console.log(mirarFechayhora(" nada      "))
     console.log(mirarFechayhora("19/05/2000 12:46"))
 
-//  validar mes  
+7 //  validar mes  
 
 function validarMes(mes) {
     const meses = mes.trim();
@@ -166,8 +166,7 @@ console.log(validarMes("2023-03-28"))
 
 
 
-
-//  validar semana  
+ 8//  validar semana  
 
 function validarSemana(semana){
     const semanas = semana.trim();
@@ -192,11 +191,70 @@ function verFormato(atributoFormato) {
     console.log(typeof document.querySelector(atributoFormato).value)
 }
 
-//  validar un rango númerico min de -10 a un maximo de 10  
+9 //  validar un rango númerico min de -10 a un maximo de 10  
 
-//  validar un intervalo del 0 al 10  
 
-//  validar número de teléfono  
+function validarRango(rango){
+    const rangos = rango.trim();
+    //console.log("sin limpiar: ", intervalo, " y limpio: ", distancia)
+    if (typeof rangos !== 'string' || rangos > 10 || rangos <-10) {
+        console.log("entro en el rango")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarRango("10"))
+console.log(validarRango("-10"))
+console.log(validarRango("-11"))
+console.log(validarRango("11"))
+console.log(validarRango("9"))
+
+
+
+10 //  validar un intervalo del 0 al 10  
+
+function validarIntervalo(intervalo){
+    const distancia = intervalo.trim();
+    //console.log("sin limpiar: ", intervalo, " y limpio: ", distancia)
+    if (typeof distancia !== 'string' || distancia > 10 || distancia <= 0) {
+        console.log("entro en la el intervalo")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarIntervalo("10"))
+console.log(validarIntervalo("-1"))
+console.log(validarIntervalo("9"))
+console.log(validarIntervalo("5"))
+console.log(validarIntervalo("14"))
+
+11 //  validar número de teléfono  
+
+
+function validarTelefono(telefono){
+    const telefonos = telefono.trim();
+    const pattern = /(6|7)[ -]*([0-9][ -]*){8}/
+    if (telefonos.length < 9 || telefonos.length > 12) {
+        console.log("El número de teléfono debe tener entre 9 y 12 caracteres");
+        return false;
+    }
+    if (typeof telefonos !== 'string' || telefonos === "" || !pattern.test(telefonos)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(validarTelefono("661-18-69-18"))
+console.log(validarTelefono("661186918"))
+console.log(validarTelefono("6611869181818"))
+console.log(validarTelefono("5"))
+console.log(validarTelefono("14"))
 
     // Verificar que sea un valor numerico 
         // Verificar que el maximo de caracteres sean 9
