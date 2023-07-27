@@ -233,7 +233,8 @@ console.log(validarIntervalo("5"))
 console.log(validarIntervalo("14"))
 
 11 //  validar número de teléfono  
-
+   // Verificar que sea un valor numerico 
+        // Verificar que el maximo de caracteres sean 9
 
 function validarTelefono(telefono){
     const telefonos = telefono.trim();
@@ -256,10 +257,43 @@ console.log(validarTelefono("6611869181818"))
 console.log(validarTelefono("5"))
 console.log(validarTelefono("14"))
 
-    // Verificar que sea un valor numerico 
-        // Verificar que el maximo de caracteres sean 9
 
-//  validar terminos de búsqueda 
 
+ 12//  validar terminos de búsqueda 
+
+ function validarBusqueda(busqueda){
+    const busquedas = busqueda.trim();
+    const pattern = /^[A-Za-z0-9\s]+$/;
+    //console.log("sin limpiar: ", busqueda, " y limpio: ", busquedas)
+    if (typeof busquedas !== 'string' || busquedas === "" || !pattern.test(busquedas)) {
+        console.log("entro en la semana")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarBusqueda("Algo de 23"))
+
+
+    
 //  validar un color
+
+function validarColor(color){
+    const Colores = color.trim();
+    const pattern = /(?:#|0x)(?:[a-f0-9]{3}|[a-f0-9]{6})\b|(?:rgb|hsl)a?\([^\)]*\)/;
+    //console.log("sin limpiar: ", color, " y limpio: ", color)
+    if (typeof Colores !== 'string' || Colores === "" || !pattern.test(Colores)) {
+        console.log("entro el color")
+        return false
+    } else {
+        return true
+    }
+}
+console.log(validarColor("#ffcccc456cf"))
+console.log(validarColor("#E6F5FF"))
+
+function mirarColor(){
+    console.log(typeof document.querySelector("[type=color]").value);
+}
+
 //  funcion que permite ver comom recoge los datos un formulario
